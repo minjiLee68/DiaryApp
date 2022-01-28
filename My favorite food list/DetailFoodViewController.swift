@@ -17,9 +17,17 @@ class DetailFoodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         foodViewModel.loadTasks()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(detailViewController(_:)), name: NSNotification.Name("dialogPostViewController"), object: nil)
 
         tableView.backgroundColor = UIColor.secondarySystemBackground
         addButton.addTarget(self, action: #selector(goAlert), for: .touchUpInside)
+    }
+    
+    @objc func detailViewController(_ noti: Notification) {
+        OperationQueue.main.addOperation {
+            self.tableView.reloadData()
+        }
     }
     
     @objc func goAlert() {
