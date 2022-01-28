@@ -16,9 +16,16 @@ class DetailFoodViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.backgroundColor = UIColor.secondarySystemBackground
         foodViewModel.loadTasks()
+
+        tableView.backgroundColor = UIColor.secondarySystemBackground
+        addButton.addTarget(self, action: #selector(goAlert), for: .touchUpInside)
+    }
+    
+    @objc func goAlert() {
+        let alert = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as! DialogViewController
+        alert.modalPresentationStyle = .overCurrentContext
+        present(alert, animated: false, completion: nil)
     }
     
     func swipeRecognizer() {
@@ -42,11 +49,14 @@ class DetailFoodViewController: UIViewController {
 
 extension DetailFoodViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foodViewModel.allCount
+        return foodViewModel.allCount.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailListCell", for: indexPath) as? DetailListCell else { return UITableViewCell() }
+        var food: Food
+        food = foodViewModel.allCount[indexPath.item]
+        cell.updateUI(food: food)
         return cell
     }
 }

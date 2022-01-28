@@ -42,7 +42,7 @@ class FoodManager {
         Storage.store(foods, to: .documents, as: "foods.json")
     }
     
-    func retriveTodo() {
+    func retriveFood() {
         foods = Storage.retrive("foods.json", from: .documents, as: [Food].self) ?? []
         
         let lastId = foods.last?.id ?? 0
@@ -54,8 +54,8 @@ class FoodViewModel {
     
     private let manager = FoodManager.shared
     
-    var allCount: Int {
-        return manager.foods.count
+    var allCount: [Food] {
+        return manager.foods
     }
     
     var foods: [Food] {
@@ -67,6 +67,6 @@ class FoodViewModel {
     }
     
     func loadTasks() {
-        manager.retriveTodo()
+        manager.retriveFood()
     }
 }

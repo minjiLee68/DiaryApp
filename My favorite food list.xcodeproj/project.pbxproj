@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A1CA21527A3BE2E0059D888 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CA21427A3BE2E0059D888 /* Food.swift */; };
 		0A1CA21727A3BEE30059D888 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CA21627A3BEE30059D888 /* Storage.swift */; };
+		0A1CA21927A3DA070059D888 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CA21827A3DA070059D888 /* DialogViewController.swift */; };
 		0AEC607B27A2D3C300A5F2A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC607A27A2D3C300A5F2A2 /* AppDelegate.swift */; };
 		0AEC607D27A2D3C300A5F2A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC607C27A2D3C300A5F2A2 /* SceneDelegate.swift */; };
 		0AEC608227A2D3C300A5F2A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC608027A2D3C300A5F2A2 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		0A1CA21427A3BE2E0059D888 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		0A1CA21627A3BEE30059D888 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		0A1CA21827A3DA070059D888 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		0AEC607727A2D3C300A5F2A2 /* My favorite food list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My favorite food list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC607A27A2D3C300A5F2A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AEC607C27A2D3C300A5F2A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				0AEC607A27A2D3C300A5F2A2 /* AppDelegate.swift */,
 				0AEC607C27A2D3C300A5F2A2 /* SceneDelegate.swift */,
 				0AEC608027A2D3C300A5F2A2 /* Main.storyboard */,
+				0A1CA21827A3DA070059D888 /* DialogViewController.swift */,
 				0AEC609027A2DE2200A5F2A2 /* DetailFoodViewController.swift */,
 				0A1CA21427A3BE2E0059D888 /* Food.swift */,
 				0A1CA21627A3BEE30059D888 /* Storage.swift */,
@@ -153,6 +156,7 @@
 				0AEC607D27A2D3C300A5F2A2 /* SceneDelegate.swift in Sources */,
 				0AEC609127A2DE2200A5F2A2 /* DetailFoodViewController.swift in Sources */,
 				0A1CA21727A3BEE30059D888 /* Storage.swift in Sources */,
+				0A1CA21927A3DA070059D888 /* DialogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
