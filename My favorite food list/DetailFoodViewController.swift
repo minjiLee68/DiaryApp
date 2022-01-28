@@ -11,6 +11,10 @@ class DetailFoodViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var foodName: UILabel!
+    @IBOutlet weak var viewUI: UIView!
+    
+    var tag: Int = 0
     
     let foodViewModel = FoodViewModel()
     
@@ -19,7 +23,7 @@ class DetailFoodViewController: UIViewController {
         foodViewModel.loadTasks()
         
         NotificationCenter.default.addObserver(self, selector: #selector(detailViewController(_:)), name: NSNotification.Name("dialogPostViewController"), object: nil)
-
+        
         tableView.backgroundColor = UIColor.secondarySystemBackground
         addButton.addTarget(self, action: #selector(goAlert), for: .touchUpInside)
     }
@@ -36,12 +40,6 @@ class DetailFoodViewController: UIViewController {
         present(alert, animated: false, completion: nil)
     }
     
-    func swipeRecognizer() {
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
-        swipeRight.direction = .right
-        self.view.addGestureRecognizer(swipeRight)
-    }
-    
     @IBAction func respondToSwipeGesture(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
         case UISwipeGestureRecognizer.Direction.right :
@@ -53,18 +51,30 @@ class DetailFoodViewController: UIViewController {
     @IBAction func backTapButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func swipeRecognizer() {
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+    }
 }
 
-extension DetailFoodViewController: UITableViewDataSource {
+extension DetailFoodViewController: UITableViewDataSource {ç
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foodViewModel.allCount.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailListCell", for: indexPath) as? DetailListCell else { return UITableViewCell() }
+        
+        self.view.tag = tag
         var food: Food
         food = foodViewModel.allCount[indexPath.item]
-        cell.updateUI(food: food)
+        if food.tag == self.viewUI.tag {
+            print("---> \(food)")
+            print("--> \(viewUI.tag)")
+            cell.updateUI(food: food)
+        } else { return UITableViewCell() }
         return cell
     }
 }

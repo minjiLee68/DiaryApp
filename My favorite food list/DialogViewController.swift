@@ -12,20 +12,19 @@ class DialogViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var viewUI: UIView!
     @IBOutlet weak var inputText: UITextField!
+    @IBOutlet weak var dialogView: UIView!
+    
+    var tag: Int = 0
     
     let foodViewModel = FoodViewModel()
     let DialogPostViewController: Notification.Name = Notification.Name("dialogPostViewController")
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         viewDesign()
-    //saveButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        
+//        self.view.tag = tag
     }
-    
-//    @objc func dismissView() {
-//        dismiss(animated: false, completion: nil)
-//    }
     
     func viewDesign() {
         viewUI.layer.cornerRadius = 20
@@ -38,7 +37,8 @@ class DialogViewController: UIViewController {
     
     @IBAction func addTaskButtonTapped(_ sender: Any) {
         guard let detail = inputText.text, detail.isEmpty == false else { return }
-        let food = FoodManager.shared.createFood(detail: detail)
+        self.view.tag = tag
+        let food = FoodManager.shared.createFood(detail: detail, tag: self.view.tag)
         foodViewModel.addFood(food)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
         NotificationCenter.default.post(name: DialogPostViewController, object: nil, userInfo: nil)

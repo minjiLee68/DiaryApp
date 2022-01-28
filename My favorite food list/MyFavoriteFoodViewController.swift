@@ -37,50 +37,74 @@ class MyFavoriteFoodViewController: UIViewController {
 
 extension MyFavoriteFoodViewController {
     @objc func tappedconcern1(_ gesture: UITapGestureRecognizer) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") else {
+        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
+        dvc.tag = 0
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") as? DetailFoodViewController else {
             return
         }
         vc.modalPresentationStyle = .fullScreen
+        vc.tag = 0
         present(vc, animated: true)
     }
 
     @objc func tappedconcern2(_ gesture: UITapGestureRecognizer) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") else {
+        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
+        dvc.tag = 1
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") as? DetailFoodViewController else {
             return
         }
-        vc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        vc.tag = 1
         present(vc, animated: true)
     }
 
     @objc func tappedconcern3(_ gesture: UITapGestureRecognizer) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") else {
+        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
+        dvc.tag = 2
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") as? DetailFoodViewController else {
             return
         }
-        vc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        vc.tag = 2
         present(vc, animated: true)
     }
 
     @objc func tappedconcern4(_ gesture: UITapGestureRecognizer) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") else {
+        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
+        dvc.tag = 3
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") as? DetailFoodViewController else {
             return
         }
-        vc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        vc.tag = 3
         present(vc, animated: true)
     }
 
     @objc func tappedconcern5(_ gesture: UITapGestureRecognizer) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") else {
+        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
+        dvc.tag = 4
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") as? DetailFoodViewController else {
             return
         }
-        vc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        vc.tag = 4
         present(vc, animated: true)
     }
 
     @objc func tappedconcern6(_ gesture: UITapGestureRecognizer) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") else {
+        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
+        dvc.tag = 5
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") as? DetailFoodViewController else {
             return
         }
-        vc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        vc.tag = 5
         present(vc, animated: true)
     }
 }

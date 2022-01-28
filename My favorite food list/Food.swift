@@ -10,9 +10,11 @@ import UIKit
 struct Food: Codable, Equatable {
     let id: Int
     var foodDetail: String
+    var tag: Int
     
-    mutating func update(foodDetail: String) {
+    mutating func update(foodDetail: String, tag: Int) {
         self.foodDetail = foodDetail
+        self.tag = tag
     }
     
     static func == (lhs: Self, rhs: Self) -> Bool {
@@ -27,10 +29,10 @@ class FoodManager {
     
     var foods: [Food] = []
     
-    func createFood(detail: String) -> Food {
+    func createFood(detail: String, tag: Int) -> Food {
         let nextId = FoodManager.lastId + 1
         FoodManager.lastId = nextId
-        return  Food(id: nextId, foodDetail: detail)
+        return  Food(id: nextId, foodDetail: detail, tag: tag)
     }
     
     func addFood(_ food: Food) {
@@ -54,9 +56,37 @@ class FoodViewModel {
     
     private let manager = FoodManager.shared
     
+//    var numOfSection: Int {
+//        return Section.allCases.count
+//    }
+    
     var allCount: [Food] {
         return manager.foods
     }
+    
+//    var case1: [Food] {
+//        return foods.filter { $0.tag == 0 }
+//    }
+//
+//    var case2: [Food] {
+//        return foods.filter { $0.tag == 1 }
+//    }
+//
+//    var case3: [Food] {
+//        return foods.filter { $0.tag == 2 }
+//    }
+//
+//    var case4: [Food] {
+//        return foods.filter { $0.tag == 3 }
+//    }
+//
+//    var case5: [Food] {
+//        return foods.filter { $0.tag == 4 }
+//    }
+//
+//    var case6: [Food] {
+//        return foods.filter { $0.tag == 5 }
+//    }
     
     var foods: [Food] {
         return manager.foods
