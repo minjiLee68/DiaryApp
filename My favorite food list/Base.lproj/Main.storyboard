@@ -55,6 +55,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="back"/>
+                                <connections>
+                                    <action selector="backTapButton:" destination="Aqw-ZO-1Te" eventType="touchUpInside" id="ZTA-7z-Yki"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nko-1S-kG8">
                                 <rect key="frame" x="337" y="54" width="52" height="33.5"/>
@@ -66,6 +69,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dDP-yx-rEW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="2gb-94-taG" firstAttribute="top" secondItem="dDP-yx-rEW" secondAttribute="top" constant="50" id="2Ae-IS-nIC"/>
                             <constraint firstItem="dDP-yx-rEW" firstAttribute="trailing" secondItem="nko-1S-kG8" secondAttribute="trailing" constant="25" id="C1W-pW-7hq"/>
@@ -76,6 +80,9 @@
                             <constraint firstItem="dDP-yx-rEW" firstAttribute="trailing" secondItem="2gb-94-taG" secondAttribute="trailing" id="qMM-s5-rN8"/>
                             <constraint firstItem="hPo-rc-sFX" firstAttribute="top" secondItem="dDP-yx-rEW" secondAttribute="top" constant="10" id="spg-uI-cyo"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Yy7-0J-vTq" appends="YES" id="EqT-en-6SL"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="btH-uH-NCd"/>
                     <connections>
@@ -85,6 +92,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mi-0h-o0U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Yy7-0J-vTq">
+                    <connections>
+                        <action selector="respondToSwipeGesture:" destination="Aqw-ZO-1Te" id="bwE-KT-h2B"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="917" y="98"/>
         </scene>
@@ -264,6 +276,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UzF-LC-h0g"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="9gP-8z-plb" firstAttribute="top" secondItem="UzF-LC-h0g" secondAttribute="top" constant="120" id="6H2-NZ-pnN"/>
                             <constraint firstItem="7mC-hM-YEd" firstAttribute="top" secondItem="u0y-vk-eT6" secondAttribute="bottom" constant="73" id="Hrb-KY-iFh"/>
