@@ -38,7 +38,7 @@ class DialogViewController: UIViewController {
     @IBAction func addTaskButtonTapped(_ sender: Any) {
         guard let detail = inputText.text, detail.isEmpty == false else { return }
         self.view.tag = tag
-        let food = FoodManager.shared.createFood(detail: detail, tag: self.view.tag)
+        let food = FoodManager.shared.createFood(detail: detail, tag: tag)
         foodViewModel.addFood(food)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
         NotificationCenter.default.post(name: DialogPostViewController, object: nil, userInfo: nil)

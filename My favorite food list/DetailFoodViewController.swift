@@ -37,6 +37,7 @@ class DetailFoodViewController: UIViewController {
     @objc func goAlert() {
         let alert = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as! DialogViewController
         alert.modalPresentationStyle = .overCurrentContext
+        alert.tag = tag
         present(alert, animated: false, completion: nil)
     }
     
@@ -59,7 +60,7 @@ class DetailFoodViewController: UIViewController {
     }
 }
 
-extension DetailFoodViewController: UITableViewDataSource {ç
+extension DetailFoodViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foodViewModel.allCount.count
     }
@@ -70,9 +71,9 @@ extension DetailFoodViewController: UITableViewDataSource {ç
         self.view.tag = tag
         var food: Food
         food = foodViewModel.allCount[indexPath.item]
-        if food.tag == self.viewUI.tag {
+        if food.tag == tag {
             print("---> \(food)")
-            print("--> \(viewUI.tag)")
+            print("--> \(tag)")
             cell.updateUI(food: food)
         } else { return UITableViewCell() }
         return cell

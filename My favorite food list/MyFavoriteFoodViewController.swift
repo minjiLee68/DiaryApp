@@ -37,9 +37,6 @@ class MyFavoriteFoodViewController: UIViewController {
 
 extension MyFavoriteFoodViewController {
     @objc func tappedconcern1(_ gesture: UITapGestureRecognizer) {
-        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
-        dvc.tag = 0
-        
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") as? DetailFoodViewController else {
             return
         }
@@ -49,9 +46,6 @@ extension MyFavoriteFoodViewController {
     }
 
     @objc func tappedconcern2(_ gesture: UITapGestureRecognizer) {
-        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
-        dvc.tag = 1
-        
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") as? DetailFoodViewController else {
             return
         }
@@ -61,9 +55,6 @@ extension MyFavoriteFoodViewController {
     }
 
     @objc func tappedconcern3(_ gesture: UITapGestureRecognizer) {
-        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
-        dvc.tag = 2
-        
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") as? DetailFoodViewController else {
             return
         }
@@ -73,9 +64,6 @@ extension MyFavoriteFoodViewController {
     }
 
     @objc func tappedconcern4(_ gesture: UITapGestureRecognizer) {
-        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
-        dvc.tag = 3
-        
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") as? DetailFoodViewController else {
             return
         }
@@ -85,9 +73,6 @@ extension MyFavoriteFoodViewController {
     }
 
     @objc func tappedconcern5(_ gesture: UITapGestureRecognizer) {
-        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
-        dvc.tag = 4
-        
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") as? DetailFoodViewController else {
             return
         }
@@ -97,9 +82,6 @@ extension MyFavoriteFoodViewController {
     }
 
     @objc func tappedconcern6(_ gesture: UITapGestureRecognizer) {
-        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
-        dvc.tag = 5
-        
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "detailfood") as? DetailFoodViewController else {
             return
         }

@@ -56,37 +56,9 @@ class FoodViewModel {
     
     private let manager = FoodManager.shared
     
-//    var numOfSection: Int {
-//        return Section.allCases.count
-//    }
-    
     var allCount: [Food] {
         return manager.foods
     }
-    
-//    var case1: [Food] {
-//        return foods.filter { $0.tag == 0 }
-//    }
-//
-//    var case2: [Food] {
-//        return foods.filter { $0.tag == 1 }
-//    }
-//
-//    var case3: [Food] {
-//        return foods.filter { $0.tag == 2 }
-//    }
-//
-//    var case4: [Food] {
-//        return foods.filter { $0.tag == 3 }
-//    }
-//
-//    var case5: [Food] {
-//        return foods.filter { $0.tag == 4 }
-//    }
-//
-//    var case6: [Food] {
-//        return foods.filter { $0.tag == 5 }
-//    }
     
     var foods: [Food] {
         return manager.foods
