@@ -32,7 +32,7 @@ class FoodManager {
     func createFood(detail: String, tag: Int) -> Food {
         let nextId = FoodManager.lastId + 1
         FoodManager.lastId = nextId
-        return  Food(id: nextId, foodDetail: detail, tag: tag)
+        return Food(id: nextId, foodDetail: detail, tag: tag)
     }
     
     func addFood(_ food: Food) {
@@ -56,13 +56,13 @@ class FoodViewModel {
     
     private let manager = FoodManager.shared
     
-    var allCount: [Food] {
-        return manager.foods
+    func allCount(tag: Int) -> [Food] {
+        return manager.foods.filter{ $0.tag == tag }
     }
     
-    var foods: [Food] {
-        return manager.foods
-    }
+//    var foods: [Food] {
+//        return manager.foods
+//    }
     
     func addFood(_ food: Food) {
         manager.addFood(food)

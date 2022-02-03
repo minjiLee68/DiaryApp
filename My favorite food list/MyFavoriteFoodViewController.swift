@@ -15,9 +15,17 @@ class MyFavoriteFoodViewController: UIViewController {
     @IBOutlet weak var dessert: UIView!
     @IBOutlet weak var beverage: UIView!
     
+    @IBOutlet weak var chineseimage: UIImageView!
+    @IBOutlet weak var japaneseimage: UIImageView!
+    @IBOutlet weak var koreanimage: UIImageView!
+    @IBOutlet weak var westernimage: UIImageView!
+    @IBOutlet weak var desertimage: UIImageView!
+    @IBOutlet weak var beverageimage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         uiViewDetail()
+        imageCorenr()
         
         let concern1Gesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tappedconcern1(_:)))
         let concern2Gesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tappedconcern2(_:)))
@@ -93,40 +101,66 @@ extension MyFavoriteFoodViewController {
 
 extension MyFavoriteFoodViewController {
     func uiViewDetail() {
-        chinesefood.layer.cornerRadius = 10
+        chinesefood.layer.cornerRadius = 20
         chinesefood.layer.shadowRadius = 5
         chinesefood.layer.shadowOffset = CGSize(width: 0, height: 3)
         chinesefood.layer.shadowColor = UIColor.black.cgColor
         chinesefood.layer.shadowOpacity = 0.3
 
-        japanesefood.layer.cornerRadius = 10
+        japanesefood.layer.cornerRadius = 20
         japanesefood.layer.shadowRadius = 5
         japanesefood.layer.shadowOffset = CGSize(width: 0, height: 3)
         japanesefood.layer.shadowColor = UIColor.black.cgColor
         japanesefood.layer.shadowOpacity = 0.3
 
-        koreanfood.layer.cornerRadius = 10
+        koreanfood.layer.cornerRadius = 20
         koreanfood.layer.shadowRadius = 5
         koreanfood.layer.shadowOffset = CGSize(width: 0, height: 3)
         koreanfood.layer.shadowColor = UIColor.black.cgColor
         koreanfood.layer.shadowOpacity = 0.3
 
-        westernfood.layer.cornerRadius = 10
+        westernfood.layer.cornerRadius = 20
         westernfood.layer.shadowRadius = 5
         westernfood.layer.shadowOffset = CGSize(width: 0, height: 3)
         westernfood.layer.shadowColor = UIColor.black.cgColor
         westernfood.layer.shadowOpacity = 0.3
 
-        dessert.layer.cornerRadius = 10
+        dessert.layer.cornerRadius = 20
         dessert.layer.shadowRadius = 5
         dessert.layer.shadowOffset = CGSize(width: 0, height: 3)
         dessert.layer.shadowColor = UIColor.black.cgColor
         dessert.layer.shadowOpacity = 0.3
 
-        beverage.layer.cornerRadius = 10
+        beverage.layer.cornerRadius = 20
         beverage.layer.shadowRadius = 5
         beverage.layer.shadowOffset = CGSize(width: 0, height: 3)
         beverage.layer.shadowColor = UIColor.black.cgColor
         beverage.layer.shadowOpacity = 0.3
+    }
+    
+    func imageCorenr() {
+        chineseimage.layer.cornerRadius = 20
+        chineseimage.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        chineseimage.layer.masksToBounds = true
+        
+        koreanimage.layer.cornerRadius = 20
+        koreanimage.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        koreanimage.layer.masksToBounds = true
+        
+        westernimage.layer.cornerRadius = 20
+        westernimage.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        westernimage.layer.masksToBounds = true
+        
+        japaneseimage.layer.cornerRadius = 20
+        japaneseimage.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        japaneseimage.layer.masksToBounds = true
+        
+        desertimage.layer.cornerRadius = 20
+        desertimage.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        desertimage.layer.masksToBounds = true
+        
+        beverageimage.layer.cornerRadius = 20
+        beverageimage.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        beverageimage.layer.masksToBounds = true
     }
 }

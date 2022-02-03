@@ -21,14 +21,14 @@
                                 <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailListCell" id="WCU-eW-j4n" customClass="DetailListCell" customModule="My_favorite_food_list">
-                                        <rect key="frame" x="20" y="49.5" width="374" height="46.5"/>
+                                        <rect key="frame" x="20" y="49.5" width="374" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WCU-eW-j4n" id="4nL-rB-U6v">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="46"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="apple🍎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g9-Ve-DLi">
-                                                    <rect key="frame" x="20" y="10" width="77" height="26.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g9-Ve-DLi">
+                                                    <rect key="frame" x="20" y="10" width="41.5" height="26"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -66,12 +66,6 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
                                 </buttonConfiguration>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKO-oy-sF0">
-                                <rect key="frame" x="100" y="56.5" width="214" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
-                                <color key="textColor" name="AccentColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dDP-yx-rEW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -80,13 +74,10 @@
                             <constraint firstItem="2gb-94-taG" firstAttribute="top" secondItem="dDP-yx-rEW" secondAttribute="top" constant="50" id="2Ae-IS-nIC"/>
                             <constraint firstItem="dDP-yx-rEW" firstAttribute="trailing" secondItem="nko-1S-kG8" secondAttribute="trailing" constant="25" id="C1W-pW-7hq"/>
                             <constraint firstItem="dDP-yx-rEW" firstAttribute="bottom" secondItem="2gb-94-taG" secondAttribute="bottom" id="EOm-aO-Xj7"/>
-                            <constraint firstItem="rKO-oy-sF0" firstAttribute="leading" secondItem="dDP-yx-rEW" secondAttribute="leading" constant="100" id="FIu-OE-7LA"/>
                             <constraint firstItem="dDP-yx-rEW" firstAttribute="top" secondItem="nko-1S-kG8" secondAttribute="top" constant="-10" id="Wc3-M6-JU6"/>
                             <constraint firstItem="hPo-rc-sFX" firstAttribute="leading" secondItem="dDP-yx-rEW" secondAttribute="leading" constant="30" id="XaJ-wP-CiY"/>
                             <constraint firstItem="2gb-94-taG" firstAttribute="leading" secondItem="dDP-yx-rEW" secondAttribute="leading" id="i5I-Ms-D31"/>
-                            <constraint firstItem="rKO-oy-sF0" firstAttribute="top" secondItem="dDP-yx-rEW" secondAttribute="top" constant="12.5" id="iMB-D8-rYT"/>
                             <constraint firstItem="dDP-yx-rEW" firstAttribute="trailing" secondItem="2gb-94-taG" secondAttribute="trailing" id="qMM-s5-rN8"/>
-                            <constraint firstItem="dDP-yx-rEW" firstAttribute="trailing" secondItem="rKO-oy-sF0" secondAttribute="trailing" constant="100" id="rq2-nu-q4V"/>
                             <constraint firstItem="hPo-rc-sFX" firstAttribute="top" secondItem="dDP-yx-rEW" secondAttribute="top" constant="10" id="spg-uI-cyo"/>
                         </constraints>
                         <connections>
@@ -97,7 +88,6 @@
                     <connections>
                         <outlet property="addButton" destination="nko-1S-kG8" id="nvk-sy-FH5"/>
                         <outlet property="backButton" destination="hPo-rc-sFX" id="ZSx-MH-58f"/>
-                        <outlet property="foodName" destination="rKO-oy-sF0" id="17x-TK-hkK"/>
                         <outlet property="tableView" destination="2gb-94-taG" id="cIY-ID-kR3"/>
                         <outlet property="viewUI" destination="lBw-cV-vrh" id="Xiz-ae-MdJ"/>
                     </connections>
@@ -109,7 +99,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1760.8695652173915" y="97.767857142857139"/>
+            <point key="canvasLocation" x="1719" y="98"/>
         </scene>
         <!--Dialog View Controller-->
         <scene sceneID="SqK-mk-rYR">
@@ -192,7 +182,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2586.9565217391305" y="97.767857142857139"/>
+            <point key="canvasLocation" x="2493" y="98"/>
         </scene>
         <!--My Favorite Food View Controller-->
         <scene sceneID="GDK-3A-hvZ">
@@ -220,7 +210,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8we-v9-G65">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="중식" translatesAutoresizingMaskIntoConstraints="NO" id="8we-v9-G65">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="110"/>
                                     </imageView>
                                 </subviews>
@@ -240,7 +230,7 @@
                             <view tag="2" contentMode="scaleToFill" restorationIdentifier="2" translatesAutoresizingMaskIntoConstraints="NO" id="9gP-8z-plb">
                                 <rect key="frame" x="239" y="164" width="140" height="160"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QXd-p4-lQk">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="일식" translatesAutoresizingMaskIntoConstraints="NO" id="QXd-p4-lQk">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="110"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일식" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seR-FW-2Ou">
@@ -267,7 +257,7 @@
                             <view tag="3" contentMode="scaleToFill" restorationIdentifier="3" translatesAutoresizingMaskIntoConstraints="NO" id="7mC-hM-YEd">
                                 <rect key="frame" x="35" y="397" width="140" height="160"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kfd-Ir-xPd">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="한식" translatesAutoresizingMaskIntoConstraints="NO" id="kfd-Ir-xPd">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="110"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한식" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLM-au-Cgv">
@@ -294,10 +284,10 @@
                             <view contentMode="scaleToFill" restorationIdentifier="4" translatesAutoresizingMaskIntoConstraints="NO" id="aHn-RX-Zjf">
                                 <rect key="frame" x="239" y="397" width="140" height="160"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ioi-TR-soe">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="양식" translatesAutoresizingMaskIntoConstraints="NO" id="ioi-TR-soe">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="110"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일식" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqQ-0q-3G6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="양식" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqQ-0q-3G6">
                                         <rect key="frame" x="29" y="124.5" width="82" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -320,7 +310,7 @@
                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kW3-m7-c0c">
                                 <rect key="frame" x="35" y="630" width="140" height="160"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="5" translatesAutoresizingMaskIntoConstraints="NO" id="z52-W9-YFF">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="5" image="디저트" translatesAutoresizingMaskIntoConstraints="NO" id="z52-W9-YFF">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="110"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="디저트" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCF-zM-iwh">
@@ -347,10 +337,10 @@
                             <view tag="6" contentMode="scaleToFill" restorationIdentifier="6" translatesAutoresizingMaskIntoConstraints="NO" id="aVm-4h-F7a">
                                 <rect key="frame" x="239" y="630" width="140" height="160"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-rU-OVD">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="분식" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-rU-OVD">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="110"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="음료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZK-7h-ehf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="분식" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZK-7h-ehf">
                                         <rect key="frame" x="29" y="124.5" width="82" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -395,11 +385,17 @@
                     <navigationItem key="navigationItem" id="oUZ-56-yir"/>
                     <connections>
                         <outlet property="beverage" destination="aVm-4h-F7a" id="0fu-CH-OYy"/>
+                        <outlet property="beverageimage" destination="PTp-rU-OVD" id="B2X-zM-X9B"/>
                         <outlet property="chinesefood" destination="u0y-vk-eT6" id="l2p-vm-5wI"/>
+                        <outlet property="chineseimage" destination="8we-v9-G65" id="Chd-ui-3iY"/>
+                        <outlet property="desertimage" destination="z52-W9-YFF" id="6Aw-DT-lFM"/>
                         <outlet property="dessert" destination="kW3-m7-c0c" id="cW2-kN-dNv"/>
                         <outlet property="japanesefood" destination="9gP-8z-plb" id="7Cx-6e-ied"/>
+                        <outlet property="japaneseimage" destination="QXd-p4-lQk" id="uth-Fc-Zt5"/>
                         <outlet property="koreanfood" destination="7mC-hM-YEd" id="Era-7R-m78"/>
+                        <outlet property="koreanimage" destination="kfd-Ir-xPd" id="F3A-Nb-Uky"/>
                         <outlet property="westernfood" destination="aHn-RX-Zjf" id="2uk-CV-QoA"/>
+                        <outlet property="westernimage" destination="ioi-TR-soe" id="p71-Qr-wp1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJl-VY-U8M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -408,6 +404,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="디저트" width="564" height="697"/>
+        <image name="분식" width="564" height="564"/>
+        <image name="양식" width="500" height="750"/>
+        <image name="일식" width="564" height="564"/>
+        <image name="중식" width="564" height="442"/>
+        <image name="한식" width="564" height="564"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

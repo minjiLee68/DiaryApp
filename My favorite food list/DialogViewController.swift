@@ -22,13 +22,11 @@ class DialogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewDesign()
-        
-//        self.view.tag = tag
     }
     
     func viewDesign() {
-        viewUI.layer.cornerRadius = 20
-        saveButton.layer.cornerRadius = 15
+        viewUI.layer.cornerRadius = 25
+        saveButton.layer.cornerRadius = 20
     }
     
     @IBAction func tapBG(_ sender: Any) {

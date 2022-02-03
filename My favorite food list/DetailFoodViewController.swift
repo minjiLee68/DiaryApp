@@ -11,7 +11,6 @@ class DetailFoodViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var viewUI: UIView!
     
     var tag: Int = 0
@@ -58,24 +57,20 @@ class DetailFoodViewController: UIViewController {
         swipeRight.direction = .right
         self.view.addGestureRecognizer(swipeRight)
     }
+    
 }
 
 extension DetailFoodViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foodViewModel.allCount.count
+        return foodViewModel.allCount(tag: tag).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailListCell", for: indexPath) as? DetailListCell else { return UITableViewCell() }
-        
         self.view.tag = tag
         var food: Food
-        food = foodViewModel.allCount[indexPath.item]
-        if food.tag == tag {
-            print("---> \(food)")
-            print("--> \(tag)")
-            cell.updateUI(food: food)
-        } else { return UITableViewCell() }
+        food = foodViewModel.allCount(tag: tag)[indexPath.item]
+        cell.updateUI(food)
         return cell
     }
 }
@@ -97,7 +92,7 @@ class DetailListCell: UITableViewCell {
         super.prepareForReuse()
     }
     
-    func updateUI(food: Food) {
+    func updateUI(_ food: Food) {
         foodName.text = food.foodDetail
     }
 }
