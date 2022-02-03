@@ -40,6 +40,11 @@ class FoodManager {
         saveFood()
     }
     
+    func deleteFood(_ food: Food) {
+        foods = foods.filter { $0.id != food.id }
+        saveFood()
+    }
+    
     func saveFood() {
         Storage.store(foods, to: .documents, as: "foods.json")
     }
@@ -60,9 +65,9 @@ class FoodViewModel {
         return manager.foods.filter{ $0.tag == tag }
     }
     
-//    var foods: [Food] {
-//        return manager.foods
-//    }
+    var foods: [Food] {
+        return manager.foods
+    }
     
     func addFood(_ food: Food) {
         manager.addFood(food)
@@ -70,5 +75,9 @@ class FoodViewModel {
     
     func loadTasks() {
         manager.retriveFood()
+    }
+    
+    func deleteFood(_ food: Food) {
+        manager.deleteFood(food)
     }
 }

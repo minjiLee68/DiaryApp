@@ -19,6 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2gb-94-taG">
                                 <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailListCell" id="WCU-eW-j4n" customClass="DetailListCell" customModule="My_favorite_food_list">
                                         <rect key="frame" x="20" y="49.5" width="374" height="46"/>
@@ -197,12 +198,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ace-dX-nUm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view tag="1" contentMode="scaleToFill" restorationIdentifier="1" translatesAutoresizingMaskIntoConstraints="NO" id="u0y-vk-eT6">
-                                <rect key="frame" x="35" y="164" width="140" height="160"/>
+                                <rect key="frame" x="35" y="159" width="140" height="160"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="중식" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMb-d3-NAI">
                                         <rect key="frame" x="29" y="124.5" width="82" height="20.5"/>
@@ -228,7 +229,7 @@
                                 </constraints>
                             </view>
                             <view tag="2" contentMode="scaleToFill" restorationIdentifier="2" translatesAutoresizingMaskIntoConstraints="NO" id="9gP-8z-plb">
-                                <rect key="frame" x="239" y="164" width="140" height="160"/>
+                                <rect key="frame" x="239" y="159" width="140" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="일식" translatesAutoresizingMaskIntoConstraints="NO" id="QXd-p4-lQk">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="110"/>
@@ -255,7 +256,7 @@
                                 </constraints>
                             </view>
                             <view tag="3" contentMode="scaleToFill" restorationIdentifier="3" translatesAutoresizingMaskIntoConstraints="NO" id="7mC-hM-YEd">
-                                <rect key="frame" x="35" y="397" width="140" height="160"/>
+                                <rect key="frame" x="35" y="392" width="140" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="한식" translatesAutoresizingMaskIntoConstraints="NO" id="kfd-Ir-xPd">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="110"/>
@@ -282,7 +283,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" restorationIdentifier="4" translatesAutoresizingMaskIntoConstraints="NO" id="aHn-RX-Zjf">
-                                <rect key="frame" x="239" y="397" width="140" height="160"/>
+                                <rect key="frame" x="239" y="392" width="140" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="양식" translatesAutoresizingMaskIntoConstraints="NO" id="ioi-TR-soe">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="110"/>
@@ -308,7 +309,7 @@
                                 </constraints>
                             </view>
                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kW3-m7-c0c">
-                                <rect key="frame" x="35" y="630" width="140" height="160"/>
+                                <rect key="frame" x="35" y="625" width="140" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="5" image="디저트" translatesAutoresizingMaskIntoConstraints="NO" id="z52-W9-YFF">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="110"/>
@@ -335,7 +336,7 @@
                                 </constraints>
                             </view>
                             <view tag="6" contentMode="scaleToFill" restorationIdentifier="6" translatesAutoresizingMaskIntoConstraints="NO" id="aVm-4h-F7a">
-                                <rect key="frame" x="239" y="630" width="140" height="160"/>
+                                <rect key="frame" x="239" y="625" width="140" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="분식" translatesAutoresizingMaskIntoConstraints="NO" id="PTp-rU-OVD">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="110"/>
@@ -365,7 +366,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="9gP-8z-plb" firstAttribute="top" secondItem="UzF-LC-h0g" secondAttribute="top" constant="120" id="6H2-NZ-pnN"/>
+                            <constraint firstItem="9gP-8z-plb" firstAttribute="top" secondItem="UzF-LC-h0g" secondAttribute="top" constant="115" id="6H2-NZ-pnN"/>
                             <constraint firstItem="7mC-hM-YEd" firstAttribute="top" secondItem="u0y-vk-eT6" secondAttribute="bottom" constant="73" id="Hrb-KY-iFh"/>
                             <constraint firstItem="UzF-LC-h0g" firstAttribute="trailing" secondItem="9gP-8z-plb" secondAttribute="trailing" constant="35" id="JIs-eB-RYw"/>
                             <constraint firstItem="UzF-LC-h0g" firstAttribute="trailing" secondItem="aVm-4h-F7a" secondAttribute="trailing" constant="35" id="NhY-xC-zdC"/>
@@ -377,7 +378,7 @@
                             <constraint firstItem="u0y-vk-eT6" firstAttribute="leading" secondItem="UzF-LC-h0g" secondAttribute="leading" constant="35" id="Vz2-x3-Fgg"/>
                             <constraint firstItem="7mC-hM-YEd" firstAttribute="leading" secondItem="UzF-LC-h0g" secondAttribute="leading" constant="35" id="brq-SO-JkD"/>
                             <constraint firstItem="kW3-m7-c0c" firstAttribute="top" secondItem="7mC-hM-YEd" secondAttribute="bottom" constant="73" id="iww-rM-d66"/>
-                            <constraint firstItem="u0y-vk-eT6" firstAttribute="top" secondItem="UzF-LC-h0g" secondAttribute="top" constant="120" id="o0d-4a-IBq"/>
+                            <constraint firstItem="u0y-vk-eT6" firstAttribute="top" secondItem="UzF-LC-h0g" secondAttribute="top" constant="115" id="o0d-4a-IBq"/>
                             <constraint firstItem="aHn-RX-Zjf" firstAttribute="top" secondItem="9gP-8z-plb" secondAttribute="bottom" constant="73" id="w5c-nq-PFZ"/>
                             <constraint firstItem="kW3-m7-c0c" firstAttribute="leading" secondItem="UzF-LC-h0g" secondAttribute="leading" constant="35" id="yYe-Vr-ffT"/>
                         </constraints>
@@ -415,6 +416,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

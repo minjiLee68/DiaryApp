@@ -79,11 +79,20 @@ extension DetailFoodViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return nil
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            var food: Food
+            food = foodViewModel.foods[indexPath.item]
+            foodViewModel.deleteFood(food)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert { }
+    }
 }
 
 class DetailListCell: UITableViewCell {
     @IBOutlet weak var foodName: UILabel!
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
     }
