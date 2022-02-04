@@ -79,17 +79,27 @@ extension DetailFoodViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return nil
     }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let actions1 = UIContextualAction(style: .normal, title: "삭제", handler: { action, view, completionHandler in
             var food: Food
-            food = foodViewModel.foods[indexPath.item]
-            foodViewModel.deleteFood(food)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-            print("--> \(food)")
-            tableView.reloadData()
-        } else if editingStyle == .insert { }
+            food = self.foodViewModel.foods[indexPath.item]
+            self.foodViewModel.deleteFood(food)
+            self.tableView.reloadData()
+            completionHandler(true)
+        })
+        actions1.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [actions1])
     }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            var food: Food
+//            food = foodViewModel.foods[indexPath.item]
+//            foodViewModel.deleteFood(food)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//            print("--> \(food)")
+//            tableView.reloadData()
+//        } else if editingStyle == .insert { }
+//    }
 }
 
 class DetailListCell: UITableViewCell {
