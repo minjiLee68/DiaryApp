@@ -85,7 +85,9 @@ extension DetailFoodViewController: UITableViewDelegate {
             var food: Food
             food = foodViewModel.foods[indexPath.item]
             foodViewModel.deleteFood(food)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+            print("--> \(food)")
+            tableView.reloadData()
         } else if editingStyle == .insert { }
     }
 }
