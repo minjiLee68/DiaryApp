@@ -19,11 +19,12 @@ class DetailFoodViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        foodViewModel.loadTasks()
         
         NotificationCenter.default.addObserver(self, selector: #selector(detailViewController(_:)), name: NSNotification.Name("dialogPostViewController"), object: nil)
         
-        tableView.backgroundColor = UIColor.secondarySystemBackground
+        self.view.tag = tag
+        foodViewModel.loadTasks()
+        uiDesign()
         addButton.addTarget(self, action: #selector(goAlert), for: .touchUpInside)
     }
     
@@ -58,6 +59,12 @@ class DetailFoodViewController: UIViewController {
         self.view.addGestureRecognizer(swipeRight)
     }
     
+    func uiDesign() {
+        tableView.backgroundColor = .clear
+        tableView.contentInset = .zero
+        tableView.contentInsetAdjustmentBehavior = .never
+    }
+    
 }
 
 extension DetailFoodViewController: UITableViewDataSource {
@@ -67,11 +74,14 @@ extension DetailFoodViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailListCell", for: indexPath) as? DetailListCell else { return UITableViewCell() }
-        self.view.tag = tag
         var food: Food
         food = foodViewModel.allCount(tag: tag)[indexPath.item]
         cell.updateUI(food)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        .leastNonzeroMagnitude
     }
 }
 
@@ -82,7 +92,7 @@ extension DetailFoodViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let actions1 = UIContextualAction(style: .normal, title: "삭제", handler: { action, view, completionHandler in
             var food: Food
-            food = self.foodViewModel.foods[indexPath.item]
+            food = self.foodViewModel.allCount(tag: self.tag)[indexPath.item]
             self.foodViewModel.deleteFood(food)
             self.tableView.reloadData()
             completionHandler(true)
