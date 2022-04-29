@@ -7,31 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A1CA21527A3BE2E0059D888 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CA21427A3BE2E0059D888 /* Food.swift */; };
+		0A1CA21527A3BE2E0059D888 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CA21427A3BE2E0059D888 /* Diary.swift */; };
 		0A1CA21727A3BEE30059D888 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CA21627A3BEE30059D888 /* Storage.swift */; };
 		0A1CA21927A3DA070059D888 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1CA21827A3DA070059D888 /* DialogViewController.swift */; };
 		0A87353027ABC966008F0B2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A87352E27ABC966008F0B2E /* Main.storyboard */; };
+		0AA735562819979B00E0CC9E /* TodayDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA735552819979B00E0CC9E /* TodayDiaryViewController.swift */; };
 		0AEC607B27A2D3C300A5F2A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC607A27A2D3C300A5F2A2 /* AppDelegate.swift */; };
 		0AEC607D27A2D3C300A5F2A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC607C27A2D3C300A5F2A2 /* SceneDelegate.swift */; };
 		0AEC608427A2D3C400A5F2A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC608327A2D3C400A5F2A2 /* Assets.xcassets */; };
 		0AEC608727A2D3C400A5F2A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC608527A2D3C400A5F2A2 /* LaunchScreen.storyboard */; };
-		0AEC608F27A2D3FF00A5F2A2 /* MyFavoriteFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC608E27A2D3FF00A5F2A2 /* MyFavoriteFoodViewController.swift */; };
-		0AEC609127A2DE2200A5F2A2 /* DetailFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC609027A2DE2200A5F2A2 /* DetailFoodViewController.swift */; };
+		0AEC609127A2DE2200A5F2A2 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC609027A2DE2200A5F2A2 /* DiaryDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A1CA21427A3BE2E0059D888 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		0A1CA21427A3BE2E0059D888 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		0A1CA21627A3BEE30059D888 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		0A1CA21827A3DA070059D888 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		0A87352F27ABC966008F0B2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0AEC607727A2D3C300A5F2A2 /* My favorite food list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My favorite food list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AA735552819979B00E0CC9E /* TodayDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDiaryViewController.swift; sourceTree = "<group>"; };
+		0AEC607727A2D3C300A5F2A2 /* DiaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC607A27A2D3C300A5F2A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AEC607C27A2D3C300A5F2A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0AEC608327A2D3C400A5F2A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AEC608627A2D3C400A5F2A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AEC608827A2D3C400A5F2A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0AEC608E27A2D3FF00A5F2A2 /* MyFavoriteFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteFoodViewController.swift; sourceTree = "<group>"; };
-		0AEC609027A2DE2200A5F2A2 /* DetailFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFoodViewController.swift; sourceTree = "<group>"; };
+		0AEC609027A2DE2200A5F2A2 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 		0AEC606E27A2D3C300A5F2A2 = {
 			isa = PBXGroup;
 			children = (
-				0AEC607927A2D3C300A5F2A2 /* My favorite food list */,
+				0AEC607927A2D3C300A5F2A2 /* DiaryApp */,
 				0AEC607827A2D3C300A5F2A2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,35 +56,35 @@
 		0AEC607827A2D3C300A5F2A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0AEC607727A2D3C300A5F2A2 /* My favorite food list.app */,
+				0AEC607727A2D3C300A5F2A2 /* DiaryApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0AEC607927A2D3C300A5F2A2 /* My favorite food list */ = {
+		0AEC607927A2D3C300A5F2A2 /* DiaryApp */ = {
 			isa = PBXGroup;
 			children = (
 				0AEC607A27A2D3C300A5F2A2 /* AppDelegate.swift */,
 				0AEC607C27A2D3C300A5F2A2 /* SceneDelegate.swift */,
 				0A1CA21827A3DA070059D888 /* DialogViewController.swift */,
-				0AEC609027A2DE2200A5F2A2 /* DetailFoodViewController.swift */,
-				0A1CA21427A3BE2E0059D888 /* Food.swift */,
+				0AEC609027A2DE2200A5F2A2 /* DiaryDetailViewController.swift */,
+				0A1CA21427A3BE2E0059D888 /* Diary.swift */,
 				0A1CA21627A3BEE30059D888 /* Storage.swift */,
-				0AEC608E27A2D3FF00A5F2A2 /* MyFavoriteFoodViewController.swift */,
+				0AA735552819979B00E0CC9E /* TodayDiaryViewController.swift */,
 				0AEC608327A2D3C400A5F2A2 /* Assets.xcassets */,
 				0AEC608527A2D3C400A5F2A2 /* LaunchScreen.storyboard */,
 				0A87352E27ABC966008F0B2E /* Main.storyboard */,
 				0AEC608827A2D3C400A5F2A2 /* Info.plist */,
 			);
-			path = "My favorite food list";
+			path = DiaryApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0AEC607627A2D3C300A5F2A2 /* My favorite food list */ = {
+		0AEC607627A2D3C300A5F2A2 /* DiaryApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0AEC608B27A2D3C400A5F2A2 /* Build configuration list for PBXNativeTarget "My favorite food list" */;
+			buildConfigurationList = 0AEC608B27A2D3C400A5F2A2 /* Build configuration list for PBXNativeTarget "DiaryApp" */;
 			buildPhases = (
 				0AEC607327A2D3C300A5F2A2 /* Sources */,
 				0AEC607427A2D3C300A5F2A2 /* Frameworks */,
@@ -94,9 +94,9 @@
 			);
 			dependencies = (
 			);
-			name = "My favorite food list";
+			name = DiaryApp;
 			productName = "My favorite food list";
-			productReference = 0AEC607727A2D3C300A5F2A2 /* My favorite food list.app */;
+			productReference = 0AEC607727A2D3C300A5F2A2 /* DiaryApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +114,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0AEC607227A2D3C300A5F2A2 /* Build configuration list for PBXProject "My favorite food list" */;
+			buildConfigurationList = 0AEC607227A2D3C300A5F2A2 /* Build configuration list for PBXProject "DiaryApp" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -127,7 +127,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0AEC607627A2D3C300A5F2A2 /* My favorite food list */,
+				0AEC607627A2D3C300A5F2A2 /* DiaryApp */,
 			);
 		};
 /* End PBXProject section */
@@ -150,11 +150,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AEC608F27A2D3FF00A5F2A2 /* MyFavoriteFoodViewController.swift in Sources */,
+				0AA735562819979B00E0CC9E /* TodayDiaryViewController.swift in Sources */,
 				0AEC607B27A2D3C300A5F2A2 /* AppDelegate.swift in Sources */,
-				0A1CA21527A3BE2E0059D888 /* Food.swift in Sources */,
+				0A1CA21527A3BE2E0059D888 /* Diary.swift in Sources */,
 				0AEC607D27A2D3C300A5F2A2 /* SceneDelegate.swift in Sources */,
-				0AEC609127A2DE2200A5F2A2 /* DetailFoodViewController.swift in Sources */,
+				0AEC609127A2DE2200A5F2A2 /* DiaryDetailViewController.swift in Sources */,
 				0A1CA21727A3BEE30059D888 /* Storage.swift in Sources */,
 				0A1CA21927A3DA070059D888 /* DialogViewController.swift in Sources */,
 			);
@@ -307,7 +307,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4JR7PKLFY2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "My favorite food list/Info.plist";
+				INFOPLIST_FILE = DiaryApp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -318,7 +318,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.minji.My-favorite-food-list";
+				PRODUCT_BUNDLE_IDENTIFIER = com.minji.DiaryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -335,7 +335,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4JR7PKLFY2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "My favorite food list/Info.plist";
+				INFOPLIST_FILE = DiaryApp;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -346,7 +346,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.minji.My-favorite-food-list";
+				PRODUCT_BUNDLE_IDENTIFIER = com.minji.DiaryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -357,7 +357,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0AEC607227A2D3C300A5F2A2 /* Build configuration list for PBXProject "My favorite food list" */ = {
+		0AEC607227A2D3C300A5F2A2 /* Build configuration list for PBXProject "DiaryApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AEC608927A2D3C400A5F2A2 /* Debug */,
@@ -366,7 +366,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0AEC608B27A2D3C400A5F2A2 /* Build configuration list for PBXNativeTarget "My favorite food list" */ = {
+		0AEC608B27A2D3C400A5F2A2 /* Build configuration list for PBXNativeTarget "DiaryApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0AEC608C27A2D3C400A5F2A2 /* Debug */,

@@ -7,52 +7,36 @@
 
 import UIKit
 
-class DetailFoodViewController: UIViewController {
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var backButton: UIButton!
+class DiaryDetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewUI: UIView!
     
     var tag: Int = 0
     
-    let foodViewModel = FoodViewModel()
+    let diaryViewModel = DiaryViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(detailViewController(_:)), name: NSNotification.Name("dialogPostViewController"), object: nil)
         
-        self.view.tag = tag
-        foodViewModel.loadTasks()
+        navigationBtn()
+        diaryViewModel.loadTasks()
         uiDesign()
-        addButton.addTarget(self, action: #selector(goAlert), for: .touchUpInside)
     }
     
-    @objc func detailViewController(_ noti: Notification) {
-        OperationQueue.main.addOperation {
-            self.tableView.reloadData()
-        }
+    private func navigationBtn() {
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(submit(_:)))
+        self.navigationItem.rightBarButtonItem = saveButton
     }
     
-    @objc func goAlert() {
+    @objc func submit(_ sender: Any) {
         let alert = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as! DialogViewController
         alert.modalPresentationStyle = .overCurrentContext
-        alert.tag = tag
+        alert.tag = self.tag
         present(alert, animated: false, completion: nil)
     }
-    
-    @IBAction func respondToSwipeGesture(_ sender: UISwipeGestureRecognizer) {
-        switch sender.direction {
-        case UISwipeGestureRecognizer.Direction.right :
-            self.dismiss(animated: true, completion: nil)
-        default: break
-        }
-    }
-    
-    @IBAction func backTapButton(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+
     func swipeRecognizer() {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
         swipeRight.direction = .right
@@ -65,18 +49,31 @@ class DetailFoodViewController: UIViewController {
         tableView.contentInsetAdjustmentBehavior = .never
     }
     
+    @objc func detailViewController(_ noti: Notification) {
+        OperationQueue.main.addOperation {
+            self.tableView.reloadData()
+        }
+    }
+    
+    @IBAction func respondToSwipeGesture(_ sender: UISwipeGestureRecognizer) {
+        switch sender.direction {
+        case UISwipeGestureRecognizer.Direction.right :
+            self.dismiss(animated: true, completion: nil)
+        default: break
+        }
+    }
 }
 
-extension DetailFoodViewController: UITableViewDataSource {
+extension DiaryDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foodViewModel.allCount(tag: tag).count
+        return diaryViewModel.allCount(tag: self.tag).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailListCell", for: indexPath) as? DetailListCell else { return UITableViewCell() }
-        var food: Food
-        food = foodViewModel.allCount(tag: tag)[indexPath.item]
-        cell.updateUI(food)
+        var diary: Diary
+        diary = diaryViewModel.allCount(tag: self.tag)[indexPath.item]
+        cell.updateUI(diary)
         return cell
     }
     
@@ -85,31 +82,23 @@ extension DetailFoodViewController: UITableViewDataSource {
     }
 }
 
-extension DetailFoodViewController: UITableViewDelegate {
+extension DiaryDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        tableView.rowHeight = 30
         return nil
     }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let actions1 = UIContextualAction(style: .normal, title: "삭제", handler: { action, view, completionHandler in
-            var food: Food
-            food = self.foodViewModel.allCount(tag: self.tag)[indexPath.item]
-            self.foodViewModel.deleteFood(food)
+            var diary: Diary
+            diary = self.diaryViewModel.allCount(tag: self.tag)[indexPath.item]
+            self.diaryViewModel.deleteDiary(diary)
             self.tableView.reloadData()
             completionHandler(true)
         })
         actions1.backgroundColor = .systemRed
         return UISwipeActionsConfiguration(actions: [actions1])
     }
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            var food: Food
-//            food = foodViewModel.foods[indexPath.item]
-//            foodViewModel.deleteFood(food)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            print("--> \(food)")
-//            tableView.reloadData()
-//        } else if editingStyle == .insert { }
-//    }
 }
 
 class DetailListCell: UITableViewCell {
@@ -123,7 +112,7 @@ class DetailListCell: UITableViewCell {
         super.prepareForReuse()
     }
     
-    func updateUI(_ food: Food) {
-        foodName.text = food.foodDetail
+    func updateUI(_ diary: Diary) {
+        foodName.text = diary.title
     }
 }

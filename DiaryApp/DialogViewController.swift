@@ -8,15 +8,15 @@
 import UIKit
 
 class DialogViewController: UIViewController {
-    
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var viewUI: UIView!
-    @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var dialogView: UIView!
+    @IBOutlet weak var diaryTextView: UITextView!
     
     var tag: Int = 0
     
-    let foodViewModel = FoodViewModel()
+    let diaryViewModel = DiaryViewModel()
     let DialogPostViewController: Notification.Name = Notification.Name("dialogPostViewController")
 
     override func viewDidLoad() {
@@ -34,10 +34,11 @@ class DialogViewController: UIViewController {
     }
     
     @IBAction func addTaskButtonTapped(_ sender: Any) {
-        guard let detail = inputText.text, detail.isEmpty == false else { return }
+        guard let title = titleTextField.text, title.isEmpty == false else { return }
+        guard let detail = diaryTextView.text, detail.isEmpty == false else { return }
         self.view.tag = tag
-        let food = FoodManager.shared.createFood(detail: detail, tag: tag)
-        foodViewModel.addFood(food)
+        let diary = DiaryManager.shared.createDiary(title: title, detail: detail, tag: tag)
+        diaryViewModel.addDiary(diary)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
         NotificationCenter.default.post(name: DialogPostViewController, object: nil, userInfo: nil)
     }
