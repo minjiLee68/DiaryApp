@@ -47,6 +47,11 @@ class DiaryManager {
         saveDiary()
     }
     
+    func updateDiary(_ diary: Diary) {
+        guard let index = diarys.firstIndex(of: diary) else { return }
+        diarys[index].update(title: diary.title, diaryDetail: diary.diaryDetail, tag: diary)
+    }
+    
     func saveDiary() {
         Storage.store(diarys, to: .documents, as: "diary.json")
     }

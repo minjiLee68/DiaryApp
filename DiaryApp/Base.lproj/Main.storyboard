@@ -12,7 +12,7 @@
         <!--Diary Detail View Controller-->
         <scene sceneID="7Oa-yc-bm0">
             <objects>
-                <viewController storyboardIdentifier="diaryDetail" id="Aqw-ZO-1Te" customClass="DiaryDetailViewController" customModule="My_favorite_food_list" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="diaryDetail" id="Aqw-ZO-1Te" customClass="DiaryDetailViewController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lBw-cV-vrh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,14 +22,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailListCell" id="WCU-eW-j4n" customClass="DetailListCell" customModule="My_favorite_food_list">
-                                        <rect key="frame" x="0.0" y="49.5" width="414" height="46"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="46.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WCU-eW-j4n" id="4nL-rB-U6v">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="46"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="46.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g9-Ve-DLi">
-                                                    <rect key="frame" x="20" y="10" width="41.5" height="26"/>
+                                                    <rect key="frame" x="20" y="10" width="41.5" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -84,7 +84,7 @@
         <!--Dialog View Controller-->
         <scene sceneID="SqK-mk-rYR">
             <objects>
-                <viewController storyboardIdentifier="dialog" id="SjU-4k-iEu" customClass="DialogViewController" customModule="My_favorite_food_list" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dialog" id="SjU-4k-iEu" customClass="DialogViewController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jeP-TM-fzC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,7 +169,7 @@
         <!--Today Diary View Controller-->
         <scene sceneID="s3u-tm-ZYk">
             <objects>
-                <viewController id="PFS-RQ-bAh" customClass="TodayDiaryViewController" customModule="My_favorite_food_list" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PFS-RQ-bAh" customClass="TodayDiaryViewController" customModule="DiaryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yle-5O-tLt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,7 +185,7 @@
                                     <inset key="sectionInset" minX="20" minY="5" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DiaryCell" id="4yP-Yz-V5P" customClass="DiaryCell" customModule="My_favorite_food_list" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DiaryCell" id="4yP-Yz-V5P" customClass="DiaryCell" customModule="DiaryApp" customModuleProvider="target">
                                         <rect key="frame" x="28" y="13" width="140" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="do8-vZ-J4l">

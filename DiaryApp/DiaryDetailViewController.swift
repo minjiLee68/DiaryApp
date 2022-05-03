@@ -34,7 +34,7 @@ class DiaryDetailViewController: UIViewController {
         let alert = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as! DialogViewController
         alert.modalPresentationStyle = .overCurrentContext
         alert.tag = self.tag
-        present(alert, animated: false, completion: nil)
+        self.present(alert, animated: false, completion: nil)
     }
 
     func swipeRecognizer() {
