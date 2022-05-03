@@ -29,7 +29,15 @@ class DialogViewController: UIViewController {
         saveButton.layer.cornerRadius = 20
     }
     
-    @IBAction func tapBG(_ sender: Any) {
+    func readAndUpdating(diary: Diary) {
+        titleTextField.text = diary.title
+        diaryTextView.text = diary.diaryDetail
+        if titleTextField.isSelected || diaryTextView.isSelectable {
+            saveButton.titleLabel?.text = "수정"
+        }
+    }
+    
+     @IBAction func tapBG(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
     
@@ -38,7 +46,13 @@ class DialogViewController: UIViewController {
         guard let detail = diaryTextView.text, detail.isEmpty == false else { return }
         self.view.tag = tag
         let diary = DiaryManager.shared.createDiary(title: title, detail: detail, tag: tag)
-        diaryViewModel.addDiary(diary)
+        
+        if saveButton.titleLabel?.text == "저장" {
+            diaryViewModel.addDiary(diary)
+        } else {
+            diaryViewModel.updateDiary(diary)
+        }
+        
         self.presentingViewController?.dismiss(animated: true, completion: nil)
         NotificationCenter.default.post(name: DialogPostViewController, object: nil, userInfo: nil)
     }

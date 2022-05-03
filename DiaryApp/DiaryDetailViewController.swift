@@ -66,13 +66,13 @@ class DiaryDetailViewController: UIViewController {
 
 extension DiaryDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return diaryViewModel.allCount(tag: self.tag).count
+        return diaryViewModel.sectionDiaryData(tag: self.tag).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailListCell", for: indexPath) as? DetailListCell else { return UITableViewCell() }
         var diary: Diary
-        diary = diaryViewModel.allCount(tag: self.tag)[indexPath.item]
+        diary = diaryViewModel.sectionDiaryData(tag: self.tag)[indexPath.item]
         cell.updateUI(diary)
         return cell
     }
@@ -91,13 +91,21 @@ extension DiaryDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let actions1 = UIContextualAction(style: .normal, title: "삭제", handler: { action, view, completionHandler in
             var diary: Diary
-            diary = self.diaryViewModel.allCount(tag: self.tag)[indexPath.item]
+            diary = self.diaryViewModel.sectionDiaryData(tag: self.tag)[indexPath.item]
             self.diaryViewModel.deleteDiary(diary)
             self.tableView.reloadData()
             completionHandler(true)
         })
         actions1.backgroundColor = .systemRed
         return UISwipeActionsConfiguration(actions: [actions1])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
+        var diary: Diary
+        diary = self.diaryViewModel.sectionDiaryData(tag: self.tag)[indexPath.item]
+        dvc.readAndUpdating(diary: diary)
+        self.present(dvc, animated: true, completion: nil)
     }
 }
 

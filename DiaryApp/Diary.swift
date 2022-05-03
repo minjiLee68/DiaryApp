@@ -49,7 +49,7 @@ class DiaryManager {
     
     func updateDiary(_ diary: Diary) {
         guard let index = diarys.firstIndex(of: diary) else { return }
-        diarys[index].update(title: diary.title, diaryDetail: diary.diaryDetail, tag: diary)
+        diarys[index].update(title: diary.title, diaryDetail: diary.diaryDetail, tag: diary.tag)
     }
     
     func saveDiary() {
@@ -68,7 +68,8 @@ class DiaryViewModel{
     
     private let manager = DiaryManager.shared
     
-    func allCount(tag: Int) -> [Diary] {
+    func sectionDiaryData(tag: Int) -> [Diary] {
+        print(manager.diarys.filter {$0.tag == tag})
         return manager.diarys.filter{ $0.tag == tag }
     }
     
@@ -80,11 +81,15 @@ class DiaryViewModel{
         manager.addDiary(diary)
     }
     
-    func loadTasks() {
-        manager.retriveDiary()
-    }
-    
     func deleteDiary(_ diary: Diary) {
         manager.deleteDiary(diary)
+    }
+    
+    func updateDiary(_ diary: Diary) {
+        manager.updateDiary(diary)
+    }
+    
+    func loadTasks() {
+        manager.retriveDiary()
     }
 }
