@@ -13,10 +13,10 @@ struct Diary: Codable, Equatable {
     var diaryDetail: String
     var tag: Int
     
-    mutating func update(title: String, diaryDetail: String, tag: Int) {
+    mutating func update(title: String, diaryDetail: String) {
         self.title = title
         self.diaryDetail = diaryDetail
-        self.tag = tag
+//        self.tag = tag
     }
     
     static func == (lhs: Self, rhs: Self) -> Bool {
@@ -47,9 +47,10 @@ class DiaryManager {
         saveDiary()
     }
     
-    func updateDiary(_ diary: Diary) {
+    func updateDiary(diary: Diary) {
         guard let index = diarys.firstIndex(of: diary) else { return }
-        diarys[index].update(title: diary.title, diaryDetail: diary.diaryDetail, tag: diary.tag)
+        diarys[index].update(title: diary.title, diaryDetail: diary.diaryDetail)
+        saveDiary()
     }
     
     func saveDiary() {
@@ -69,7 +70,6 @@ class DiaryViewModel{
     private let manager = DiaryManager.shared
     
     func sectionDiaryData(tag: Int) -> [Diary] {
-        print(manager.diarys.filter {$0.tag == tag})
         return manager.diarys.filter{ $0.tag == tag }
     }
     
@@ -86,7 +86,7 @@ class DiaryViewModel{
     }
     
     func updateDiary(_ diary: Diary) {
-        manager.updateDiary(diary)
+        manager.updateDiary(diary: diary)
     }
     
     func loadTasks() {

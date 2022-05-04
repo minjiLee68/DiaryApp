@@ -73,6 +73,7 @@ extension DiaryDetailViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailListCell", for: indexPath) as? DetailListCell else { return UITableViewCell() }
         var diary: Diary
         diary = diaryViewModel.sectionDiaryData(tag: self.tag)[indexPath.item]
+        print(diary)
         cell.updateUI(diary)
         return cell
     }
@@ -104,13 +105,18 @@ extension DiaryDetailViewController: UITableViewDelegate {
         guard let dvc = self.storyboard?.instantiateViewController(withIdentifier: "dialog") as? DialogViewController else { return }
         var diary: Diary
         diary = self.diaryViewModel.sectionDiaryData(tag: self.tag)[indexPath.item]
-        dvc.readAndUpdating(diary: diary)
+        dvc.indexId = diary.id
+        print("id \(diary.id)")
+        DispatchQueue.main.async {
+            dvc.readAndUpdating(diary: diary)
+        }
+        dvc.modalPresentationStyle = .overCurrentContext
         self.present(dvc, animated: true, completion: nil)
     }
 }
 
 class DetailListCell: UITableViewCell {
-    @IBOutlet weak var foodName: UILabel!
+    @IBOutlet weak var title: UILabel!
         
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -121,6 +127,6 @@ class DetailListCell: UITableViewCell {
     }
     
     func updateUI(_ diary: Diary) {
-        foodName.text = diary.title
+        title.text = diary.title
     }
 }

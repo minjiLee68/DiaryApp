@@ -15,6 +15,8 @@ class DialogViewController: UIViewController {
     @IBOutlet weak var diaryTextView: UITextView!
     
     var tag: Int = 0
+    var indexId: Int = 0
+    var saveAndUpdate: Bool = false
     
     let diaryViewModel = DiaryViewModel()
     let DialogPostViewController: Notification.Name = Notification.Name("dialogPostViewController")
@@ -25,16 +27,15 @@ class DialogViewController: UIViewController {
     }
     
     func viewDesign() {
-        viewUI.layer.cornerRadius = 25
-        saveButton.layer.cornerRadius = 20
+        viewUI.layer.cornerRadius = 15
+        saveButton.layer.cornerRadius = 15
     }
     
     func readAndUpdating(diary: Diary) {
         titleTextField.text = diary.title
         diaryTextView.text = diary.diaryDetail
-        if titleTextField.isSelected || diaryTextView.isSelectable {
-            saveButton.titleLabel?.text = "수정"
-        }
+        saveButton.titleLabel?.text = "수정"
+        saveAndUpdate = true
     }
     
      @IBAction func tapBG(_ sender: Any) {
@@ -45,14 +46,14 @@ class DialogViewController: UIViewController {
         guard let title = titleTextField.text, title.isEmpty == false else { return }
         guard let detail = diaryTextView.text, detail.isEmpty == false else { return }
         self.view.tag = tag
-        let diary = DiaryManager.shared.createDiary(title: title, detail: detail, tag: tag)
         
-        if saveButton.titleLabel?.text == "저장" {
+        if saveAndUpdate == false {
+            let diary = DiaryManager.shared.createDiary(title: title, detail: detail, tag: tag)
             diaryViewModel.addDiary(diary)
-        } else {
+        } else if saveAndUpdate == true {
+            let diary = Diary(id: indexId, title: title, diaryDetail: detail, tag: tag)
             diaryViewModel.updateDiary(diary)
         }
-        
         self.presentingViewController?.dismiss(animated: true, completion: nil)
         NotificationCenter.default.post(name: DialogPostViewController, object: nil, userInfo: nil)
     }
