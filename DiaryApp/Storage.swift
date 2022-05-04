@@ -61,14 +61,14 @@ public class Storage {
     static func remove(_ fileName: String, from directory: Directory) {
         let url = directory.url.appendingPathComponent(fileName, isDirectory: false)
         guard FileManager.default.fileExists(atPath: url.path) else { return }
-        
+
         do {
             try FileManager.default.removeItem(at: url)
         } catch let error {
             print("---> Failed to remove msg: \(error.localizedDescription)")
         }
     }
-    
+
     static func clear(_ directory: Directory) {
         let url = directory.url
         do {

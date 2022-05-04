@@ -9,7 +9,8 @@ import UIKit
 
 class TodayDiaryViewController: UIViewController {
     
-    let cellTitle: [String] = ["매우 맑음☀️", "구름 조금🌤", "흐림☁️", "비🌧", "천둥번개🌩", "무지개🌈"]
+    let cellTitle: [String] = ["sunny", "cloud", "blur", "rain", "Thunder", "rainbow"]
+    let cellImage: [String] = ["맑음", "구름조금", "흐림", "비", "천둥번개", "무지개"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,8 @@ extension TodayDiaryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DiaryCell", for: indexPath) as? DiaryCell else { return UICollectionViewCell() }
         let title = self.cellTitle[indexPath.item]
-        cell.update(title: title)
+        let image = UIImage(named: self.cellImage[indexPath.item]) ?? UIImage()
+        cell.update(title: title, image: image)
         return cell
     }
     
@@ -48,7 +50,8 @@ class DiaryCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var image: UIImageView!
     
-    func update(title: String) {
+    func update(title: String, image: UIImage) {
         self.title.text = title
+        self.image.image = image
     }
 }
