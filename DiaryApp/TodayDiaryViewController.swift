@@ -9,7 +9,7 @@ import UIKit
 
 class TodayDiaryViewController: UIViewController {
     
-    let cellTitle: [String] = ["sunny", "cloud", "blur", "rain", "Thunder", "rainbow"]
+    let cellTitle: [String] = ["매우 맑음", "구름 조금", "흐림", "비", "천둥번개", "무지개"]
     let cellImage: [String] = ["맑음", "구름조금", "흐림", "비", "천둥번개", "무지개"]
     
     override func viewDidLoad() {
@@ -42,7 +42,7 @@ extension TodayDiaryViewController: UICollectionViewDelegate {
         vc.tag = indexPath.item
         vc.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(vc, animated: true)
-        print("cell \(indexPath.item)")
+        self.navigationController?.navigationBar.topItem?.title = ""
     }
 }
 
